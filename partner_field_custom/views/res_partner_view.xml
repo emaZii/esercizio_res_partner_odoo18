@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_custom" model="ir.ui.view">
+        <field name="name">res.partner.form.custom</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='email']" position="after">
+                <group string="Dati Cliente Personalizzati">
+                    <field name="tipo_cliente"/>
+                    <field name="num_identificativo"/>
+                    <field name="codice_cliente" readonly="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
